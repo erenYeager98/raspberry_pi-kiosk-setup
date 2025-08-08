@@ -22,12 +22,7 @@ ipcMain.handle('run-command', async (_, which) => {
       cmd = 'sudo cp /home/eren/config.txt /boot/firmware/config.txt && sudo reboot';
       break;
     case 'launch':
-      cmd = 'chromium-browser --kiosk https://erenyeager-dk.live \
-  --use-fake-ui-for-media-stream \
-  --noerrdialogs \
-  --disable-infobars \
-  --disable-session-crashed-bubble \
-  --autoplay-policy=no-user-gesture-required > /dev/null 2>&1 & sleep 1 && pkill robo-kiosk';
+      cmd = ' chromium-browser --start-maximized   --noerrdialogs   --disable-infobars   --disable-session-crashed-bubble   --autoplay-policy=no-user-gesture-required --app=https://erenyeager-dk.live > /dev/null 2>&1 & sleep 1 && pkill robo-kiosk';
       break;
     case 'revert':
       cmd = 'sudo cp /home/eren/config_mod.txt /boot/firmware/config.txt && sudo reboot';
