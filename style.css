@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #0e0e1b;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.subnote {
+  z-index: 1;
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 30px;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+.branding {
+  z-index: 1;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(128, 0, 255, 0.5);
+  margin-bottom: 50px;
+}
+
+.button-row {
+  z-index: 1;
+  display: flex;
+  gap: 20px; /* was 40px, now tighter */
+  flex-wrap: wrap; /* optional if screen is small */
+  justify-content: center;
+}
+.button-row button {
+  padding: 16px 40px; /* smaller button */
+  font-size: 1.4rem;  /* slightly smaller text */
+  border-radius: 15px; /* smaller corners */
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  border: none;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.button-row button:hover {
+  transform: scale(1.03); /* less aggressive zoom */
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
+}
+

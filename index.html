@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RoboLearn Pi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <h1 class="branding">RoboLearn Pi</h1>
+  <p class="subnote">Connect to a smart device and start the session</p>
+  <div class="button-row">
+    <button id="btn1">Smart Session</button>
+    <button id="btn2">Launch</button>
+    <button id="btn3">Compact Session</button>
+  </div>
+
+  <audio autoplay loop volume="0.5">
+    <source src="assets/ambient.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="particles.js"></script>
+  <script>
+    document.getElementById('btn1').addEventListener('click', async () => {
+      const result = await window.api.runCommand('reboot-pi');
+      alert(result);
+    });
+
+    document.getElementById('btn2').addEventListener('click', async () => {
+      const result = await window.api.runCommand('launch');
+      alert(result);
+    });
+    document.getElementById('btn3').addEventListener('click', async () => {
+      const result = await window.api.runCommand('revert');
+      alert(result);
+    });
+  </script>
+</body>
+</html>
